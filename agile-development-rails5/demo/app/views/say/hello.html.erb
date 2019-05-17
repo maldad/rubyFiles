@@ -1,0 +1,12 @@
+<h1>This is the Hello View</h1>
+<h2>Located at -> app/views/say/hello.html.erb</h2>
+<p>Ha visitado siendo las: <%= @time %></p>
+
+<p>Time to say
+  <!-- This is a helper -->
+  <%= link_to "Goodbye", say_goodbye_path %>   
+  <!-- it's a method call, with two parameters -->
+  <!-- First is the text to display as hyperlink, just like href does-->
+</p>
+<p>Visit the <%= link_to "Ahoy!", say_ahoy_path %> zone, it's free!</p>
+<p>Vea nuestros archivos: <%= link_to "Archivos", say_archivos_path %></p>

@@ -1,0 +1,12 @@
+<h1>This is the Archivos template</h1>
+<h2>Located at -> app/views/say/archivos.html.erb</h2>
+<p><%= link_to "Home", say_hello_path %></p>
+<p>
+  <% @files.each do | file | %>
+    <ul>
+      <li>
+    file name is: <%= file %>
+      </li>
+    </ul>
+  <% end %>
+</p>
