@@ -16,6 +16,7 @@
         <dt><%= product.title %></dt>
         <dd><%= truncate(strip_tags(product.description),
                length: 80) %></dd>
+        <dd><em><b>Price:</b> <%= product.price %></em></dd>
       </dl>
     </td>
 
