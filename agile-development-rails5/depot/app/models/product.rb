@@ -1,4 +1,7 @@
 class Product < ApplicationRecord
+  has_many :line_items
+  before_destroy :ensure_not_referenced_by_any_line_item
+
   #valida algunas cosas que se llamen title, description, image_url
   validates :title, :description, :image_url, presence: true
   
@@ -10,4 +13,12 @@ class Product < ApplicationRecord
     with: %r{\.(gif|jpg|png)\Z}i,
     message: 'must be a URL for GIF, JPG or PNG image.'
   }
+
+  private
+  def ensure_not_referenced_by_any_line_item
+    unless line_items.empty?
+      errors.add(:base, 'Line Items present')
+      throw :abort #the row is not destroyed
+    end
+  end
 end
